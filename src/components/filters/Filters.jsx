@@ -1,5 +1,6 @@
 import styles from './index.module.scss';
 import { useState } from 'react';
+import { Container } from '../container/Container';
 
 export function Filters({setName, setStatus, setGender, setSpecies, setType}) {
 
@@ -10,69 +11,73 @@ export function Filters({setName, setStatus, setGender, setSpecies, setType}) {
     const[genderFilter, setGenderFilter] = useState(false);
 
     return(
-        <div>
-            <div>
-                <label>Отфильтровать по имени:
-                <input type='checkbox'
+        <Container>
+            <section className={styles.filters}>
+            <div className={styles.filters_item}>
+                <label className={styles.filters_item__label}>Отфильтровать по имени:
+                <input  type='checkbox'
                 defaultChecked={false}
-                onChange={() => setNameFilter((state) => !state)}/>
+                onChange={() => {setNameFilter((state) => !state)}}/>
                 </label>  
                 {
                     nameFilter && (
-                        <input type='text' onChange={(event) => setName(event.target.value)}/>
+                        <input className={styles.filters_item__userInput} type='text' onChange={(event) => setName(event.target.value)}/>
                     )
                 } 
             </div>
-            <div>
-                <label>Отфильтровать по статусу:
+            <div className={styles.filters_item}>
+                <label className={styles.filters_item__label}>Отфильтровать по статусу:
                 <input type='checkbox'
                 defaultChecked={false}
                 onChange={() => setStatusFilter((state) => !state)}/>
                 </label> 
                 {
                     statusFilter && (
-                        <input type='text' onChange={(event) => setStatus(event.target.value)}/>
+                        <input className={styles.filters_item__userInput} type='text' onChange={(event) => setStatus(event.target.value)}/>
                     )
                 }   
             </div>
-            <div>
-                <label>Отфильтровать по виду:
+            <div className={styles.filters_item}>
+                <label className={styles.filters_item__label}>Отфильтровать по виду:
                 <input type='checkbox'
                 defaultChecked={false}
                 onChange={() => setSpeciesFilter((state) => !state)}/>
                 </label>  
                 {
                     speciesFilter && (
-                        <input type='text' onChange={(event) => setSpecies(event.target.value)}/>
+                        <input type='text' className={styles.filters_item__userInput} onChange={(event) => setSpecies(event.target.value)}/>
                     )
                 }  
             </div>
-            <div>
-                <label>Отфильтровать по типу:
+            <div className={styles.filters_item}>
+                <label className={styles.filters_item__label}>Отфильтровать по типу:
                 <input type='checkbox'
                 defaultChecked={false}
                 onChange={() => setTypeFilter((state) => !state)}/>
                 </label> 
                 {
                     typeFilter && (
-                        <input type='text' onChange={(event) => setType(event.target.value)}/>
+                        <input type='text' className={styles.filters_item__userInput} onChange={(event) => setType(event.target.value)}/>
                     )
                 }   
             </div>
-            <div>
-                <label>Отфильтровать по полу:
+            <div className={styles.filters_item}>
+                <label className={styles.filters_item__label}>Отфильтровать по полу:
                 <input type='checkbox'
                 defaultChecked={false}
                 onChange={() => setGenderFilter((state) => !state)}/>
                 </label>
                 {
                     genderFilter && (
-                        <input type='text' onChange={(event) => setGender(event.target.value)}/>
+                        <input type='text' className={styles.filters_item__userInput} onChange={(event) => setGender(event.target.value)}/>
                     )
                 }    
             </div>
 
-        </div>
+        </section>
+
+        </Container>
+      
         
     )
 }

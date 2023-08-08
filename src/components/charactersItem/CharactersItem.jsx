@@ -1,13 +1,13 @@
 import styles from './index.module.scss';
 
 
-export function CharactersItem({name, status, gender, id}) {
+export function CharactersItem({name, status, gender, id, setPopUpActive}) {
 
     return(
-        <div key={id} id={id}>
-            <h3>{name}</h3>
-            <p>{status}</p>
-            <p>{gender}</p>
+        <div className={styles.character} key={id} id={id} onClick={() => setPopUpActive(id)}>
+            <h3 className={styles.character_name}>{name}</h3>
+            <p className={styles.character_status}>Статус: {status}</p>
+            <p className={styles.character_gender}>{gender}</p>
 
         </div>
     )
