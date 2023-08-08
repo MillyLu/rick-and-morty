@@ -1,10 +1,11 @@
-import axios from "axios";
+/* eslint-disable max-len */
+import axios from 'axios';
 
 export const getAllCharacters = async (filters) => {
-  const { name, status, type, gender, species } = filters;
+  const { name, status, type, gender, species, page } = filters;
   try {
     const response = await axios.get(
-      `https://rickandmortyapi.com/api/character?name=${name}&status=${status}&species=${species}&type=${type}&gender=${gender}`
+      `https://rickandmortyapi.com/api/character?page=${page}&name=${name}&status=${status}&species=${species}&type=${type}&gender=${gender}`
     );
     return response.data;
   } catch (error) {

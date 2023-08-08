@@ -3,12 +3,12 @@ import { Container } from '../container/Container';
 
 export function Error() {
 
-    return (
-        <Container>
+  return (
+    <Container>
             
-            <p className={styles.error}>Упс...кажется такого персонажа не существует</p>
+      <p className={styles.error}>Упс...кажется такого персонажа не существует</p>
 
-        </Container>
+    </Container>
         
-    )
+  );
 }
