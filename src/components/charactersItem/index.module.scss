@@ -1,0 +1,29 @@
+.character{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 15rem;
+    box-shadow: 2px 2px 2px 1px #fc791e;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: rgb(77, 77, 77);
+
+    &_name{
+        font-size: 1.5rem;
+        text-align: center;
+        color: #fc791e;
+        background-color: rgb(77, 77, 77);
+        
+    }
+
+    &_status{
+        color:rgb(208, 214, 219);
+        background-color: rgb(77, 77, 77);
+    }
+
+    &_gender{
+        background-color: rgb(77, 77, 77);
+    }
+}
